@@ -2,21 +2,21 @@ $cache = "$env:appdata\Microsoft\Windows\PowerShell\PSReadline\*"
 
 if (Test-Path $cache) {
     Remove-Item $cache -Force
-    Write-Host "Commands history cleared" -ForegroundColor Red
+    Write-Host "`nCommands history cleared`n" -ForegroundColor Red
 }else {
-    Write-Host "Commands history already emptied" -ForegroundColor Green
+    Write-Host "`nCommands history already emptied`n" -ForegroundColor Green
 }
 
 Set-Clipboard -Value ""
-Write-Host "The clipboard has been deleted" -ForegroundColor Green
+Write-Host "The clipboard has been deleted`n" -ForegroundColor Green
 Clear-History
 
 $tempFiles = "C:\temp\*"
 
 if (Test-Path $tempFiles) {
     Remove-Item $tempFiles -Force
-    Write-Host "The temp file has been emptied" -ForegroundColor Red
+    Write-Host "The temp file has been emptied`n" -ForegroundColor Red
 
 }else {
-    Write-Host "The temp folder is already empty" -ForegroundColor Green
+    Write-Host "The temp folder is already empty`n" -ForegroundColor Green
 }
